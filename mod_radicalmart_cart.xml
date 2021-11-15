@@ -50,7 +50,7 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="1" name="RadicalMart: Cart module">
+		<server type="extension" priority="1" name="RadicalMart: Cart">
 			https://radicalmart.ru/update?element=mod_radicalmart_cart
 		</server>
 	</updateservers>
