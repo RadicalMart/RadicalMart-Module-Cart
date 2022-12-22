@@ -21,14 +21,4 @@ use Joomla\CMS\Helper\HelperFactoryAwareTrait;
 class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareInterface
 {
 	use HelperFactoryAwareTrait;
-
-	/**
-	 * Runs the dispatcher.
-	 *
-	 * @since   1.1.0
-	 */
-	public function dispatch()
-	{
-		parent::dispatch();
-	}
 }
