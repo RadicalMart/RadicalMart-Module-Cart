@@ -30,7 +30,5 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
 	public function dispatch()
 	{
 		parent::dispatch();
-
-		Factory::getApplication()->getLanguage()->load('com_radicalmart');
 	}
 }
