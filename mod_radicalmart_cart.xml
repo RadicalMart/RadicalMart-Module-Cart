@@ -54,7 +54,7 @@
 	</config>
 	<updateservers>
 		<server type="extension" priority="1" name="RadicalMart Module: Cart">
-			https://radicalmart.ru/update?element=mod_radicalmart_cart
+			https://sovmart.ru/update?element=mod_radicalmart_cart
 		</server>
 	</updateservers>
 </extension>
