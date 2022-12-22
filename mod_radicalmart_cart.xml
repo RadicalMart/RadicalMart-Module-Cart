@@ -7,7 +7,7 @@
 	<license>https://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>boss@delo-design.ru</authorEmail>
 	<authorUrl>https://delo-design.ru</authorUrl>
-	<version>1.1.0</version>
+	<version>1.1.1-dev</version>
 	<description>MOD_RADICALMART_CART_DESCRIPTION</description>
 	<namespace path="src">Joomla\Module\RadicalMartCart</namespace>
 	<scriptfile>script.php</scriptfile>
