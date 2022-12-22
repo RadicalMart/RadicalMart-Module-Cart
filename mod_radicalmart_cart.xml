@@ -29,11 +29,12 @@
 			<fieldset name="advanced">
 				<field name="layout" type="modulelayout"
 					   label="JFIELD_ALT_LAYOUT_LABEL"
-					   description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+					   class="form-select"
+					   validate="moduleLayout"/>
 				<field name="moduleclass_sfx" type="textarea"
 					   label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-					   description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
-					   rows="3"/>
+					   rows="3"
+					   validate="CssIdentifier"/>
 				<field name="cache" type="list"
 					   label="COM_MODULES_FIELD_CACHING_LABEL"
 					   description="COM_MODULES_FIELD_CACHING_DESC"
@@ -41,9 +42,9 @@
 					<option value="1">JGLOBAL_USE_GLOBAL</option>
 					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
 				</field>
-				<field name="cache_time" type="text"
+				<field name="cache_time" type="number"
 					   label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-					   description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					   filter="integer"
 					   default="900"/>
 				<field name="cachemode" type="hidden"
 					   default="static">
