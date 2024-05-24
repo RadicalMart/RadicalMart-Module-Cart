@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.9" type="module" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
 	<name>MOD_RADICALMART_CART</name>
-	<author>Delo Design</author>
-	<creationDate>December 2022</creationDate>
-	<copyright>Copyright © 2021 Delo Design. All rights reserved.</copyright>
+	<author>RadicalMart Team</author>
+	<creationDate>May 2024</creationDate>
+	<copyright>Copyright © 2024 RadicalMart. All rights reserved.</copyright>
 	<license>https://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<authorEmail>boss@delo-design.ru</authorEmail>
-	<authorUrl>https://delo-design.ru</authorUrl>
-	<version>1.1.0</version>
+	<authorEmail>info@radicalmart.ru</authorEmail>
+	<authorUrl>https://radicalmart.ru/</authorUrl>
+	<version>1.1.1-dev</version>
 	<description>MOD_RADICALMART_CART_DESCRIPTION</description>
 	<namespace path="src">Joomla\Module\RadicalMartCart</namespace>
 	<scriptfile>script.php</scriptfile>
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.mod_radicalmart_cart.ini</language>
-		<language tag="en-GB">en-GB/en-GB.mod_radicalmart_cart.sys.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.mod_radicalmart_cart.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.mod_radicalmart_cart.sys.ini</language>
+		<language tag="en-GB">en-GB/mod_radicalmart_cart.ini</language>
+		<language tag="en-GB">en-GB/mod_radicalmart_cart.sys.ini</language>
+		<language tag="ru-RU">ru-RU/mod_radicalmart_cart.ini</language>
+		<language tag="ru-RU">ru-RU/mod_radicalmart_cart.sys.ini</language>
 	</languages>
 	<files>
 		<folder module="mod_radicalmart_cart">src</folder>

@@ -2,11 +2,11 @@
 /*
  * @package     RadicalMart Cart Module
  * @subpackage  mod_radicalmart_cart
- * @version     1.1.0
- * @author      Delo Design - delo-design.ru
- * @copyright   Copyright (c) 2022 Delo Design. All rights reserved.
+ * @version     __DEPLOY_VERSION__
+ * @author      RadicalMart Team - radicalmart.ru
+ * @copyright   Copyright (c) 2024 RadicalMart. All rights reserved.
  * @license     GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link        https://delo-design.ru/
+ * @link         https://radicalmart.ru/
  */
 
 \defined('_JEXEC') or die;
@@ -30,9 +30,9 @@ return new class implements ServiceProviderInterface {
 	 */
 	public function register(Container $container)
 	{
+		// Register services
 		$container->registerServiceProvider(new ModuleDispatcherFactory('\\Joomla\\Module\\RadicalMartCart'));
 		$container->registerServiceProvider(new HelperFactory('\\Joomla\\Module\\RadicalMartCart\\Site\\Helper'));
-
 		$container->registerServiceProvider(new Module());
 	}
 };

@@ -2,18 +2,17 @@
 /*
  * @package     RadicalMart Cart Module
  * @subpackage  mod_radicalmart_cart
- * @version     1.1.0
- * @author      Delo Design - delo-design.ru
- * @copyright   Copyright (c) 2022 Delo Design. All rights reserved.
+ * @version     __DEPLOY_VERSION__
+ * @author      RadicalMart Team - radicalmart.ru
+ * @copyright   Copyright (c) 2024 RadicalMart. All rights reserved.
  * @license     GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link        https://delo-design.ru/
+ * @link         https://radicalmart.ru/
  */
 
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\AdministratorApplication;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Filesystem\File;
 use Joomla\CMS\Installer\InstallerAdapter;
 use Joomla\CMS\Installer\InstallerScriptInterface;
 use Joomla\CMS\Language\Text;
@@ -21,7 +20,6 @@ use Joomla\CMS\Version;
 use Joomla\Database\DatabaseDriver;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use Joomla\Filesystem\Path;
 
 return new class () implements ServiceProviderInterface {
 	public function register(Container $container)
@@ -70,9 +68,7 @@ return new class () implements ServiceProviderInterface {
 			 *
 			 * @since  1.1.0
 			 */
-			protected array $updateMethods = [
-				'update1_1_0'
-			];
+			protected array $updateMethods = [];
 
 			/**
 			 * Constructor.
@@ -150,12 +146,6 @@ return new class () implements ServiceProviderInterface {
 					return false;
 				}
 
-				if ($type === 'update')
-				{
-					// Check update server
-					$this->changeUpdateServer();
-				}
-
 				return true;
 			}
 
@@ -218,47 +208,6 @@ return new class () implements ServiceProviderInterface {
 				}
 
 				return true;
-			}
-
-			/**
-			 * Method to change current update server.
-			 *
-			 * @throws  \Exception
-			 *
-			 * @since  1.1.0
-			 */
-			protected function changeUpdateServer()
-			{
-				$old = 'https://radicalmart.ru/update?element=mod_radicalmart_cart';
-				$new = 'https://sovmart.ru/update?element=mod_radicalmart_cart';
-
-				$db    = $this->db;
-				$query = $db->getQuery(true)
-					->select(['update_site_id', 'location'])
-					->from($db->quoteName('#__update_sites'))
-					->where($db->quoteName('location') . ' = :location')
-					->bind(':location', $old);
-				if ($update = $db->setQuery($query)->loadObject())
-				{
-					$update->name     = 'RadicalMart Module: Cart';
-					$update->location = $new;
-					$db->updateObject('#__update_sites', $update, 'update_site_id');
-				}
-			}
-
-			/**
-			 * Method to update to 1.1.0 version.
-			 *
-			 * @since  1.1.0
-			 */
-			protected function update1_1_0()
-			{
-				// Remove old entry point
-				$file = Path::clean(JPATH_ROOT . '/modules/mod_radicalmart_cart/mod_radicalmart_cart.php');
-				if (File::exists($file))
-				{
-					File::delete($file);
-				}
 			}
 		});
 	}
